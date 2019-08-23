@@ -1,13 +1,22 @@
-<div style="font-family: Arial; text-align: center">
-    <h1>Ghostpost Feed</h1>
+{% load static %}
+
+<link href="{{ STATIC_URL }}static/main.css" rel="stylesheet" type="text/css" media="screen" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<div class="headerDiv">
+    <h1 class="header">Ghostpost Feed</h1>
 </div>
 
-<div style="padding: 20px; border: 5px inset black">
-    {% for foo in messages %}
-       <h3><a href="{%url 'author'%}">{{foo.author.name}}</a></h3>
-        <div style="padding: 10px 20px 20px 10px">
-            <em>{{foo.message}}</em>
-            <h4>By {{foo.author.name}} - {{foo.likes.count}} Boasts</h4>
-        </div>
+
+<div style="background-color: red; height: 10px"></div>
+    {% for boast in boasts %}
+    <div style= 'border: 5px black inset; font-family: Arial'>
+        <ol>
+            <li>
+                <h2><a href="boast/{{boasts}}">{{boast.boasts}}</a></h2>
+            </li>
+        </ol>
+    </div>
     {% endfor %}
-</div>

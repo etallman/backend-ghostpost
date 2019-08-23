@@ -11,8 +11,4 @@ A front end is necessary to make this work, though it doesn't have to be pretty 
 Model(s) for boasts and roasts with appropriate attributes as derived from other requirements
 Front end: 
 
-Homepage that displays boasts and roasts, sorted by time submitted
-buttons to filter the content by either boasts or roasts, sorted by time submitted
-upvote and downvote buttons for each boast and roast
-ability to sort content based on number of votes
-page to submit a boast or a roast
+Homepage that displays boasts and roasts, sorted by time submitted buttons to filter the content by either boasts or roasts, sorted by time submitted upvote and downvote buttons for each boast and roast ability to sort content based on number of vote page to submit a boast or a roast
