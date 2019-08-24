@@ -1,15 +1,12 @@
 from django import forms
-from ghostpost.models import Author
+from ghostpost.models import AnonUser, Boast, Roast
 
-
-class AuthorForm(forms.Form):
-    name = forms.CharField(max_length=50)
-    bio = forms.CharField(widget=forms.Textarea)
 
 class BoastForm(forms.Form):
-    post = forms.CharField(widget=forms.Textarea)
-    author = forms.ModelChoiceField(queryset=Author.objects.all())
+    boast = forms.CharField(label="boast", max_length=280,widget=forms.Textarea)
+    # boast_data = forms.ModelChoiceField(queryset=Boast.objects.all())
 
+    
 class RoastForm(forms.Form):
-    post = forms.CharField(widget=forms.Textarea)
-    author = forms.ModelChoiceField(queryset=Author.objects.all())
+    roast = forms.CharField (label="roast", max_length=280,widget=forms.Textarea)
+    # roast_data = forms.ModelChoiceField(queryset=Roast.objects.all())

@@ -1,11 +1,10 @@
-<!-- {% extends 'index.html' %} -->
-
 {% load crispy_forms_tags %}
-
 {% block content %}
-  <form method="post" novalidate>
+<h2>Post a Roast!</h2>
+<form action="/addroast/" method = "post">
     {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-success">Roast!</button>
-  </form>
+    {{form|crispy}}
+    <!-- <input type="submit" value="Submit"> -->
+    <button class="btn btn-primary" type="submit">ROAST!</button>
+</form>
 {% endblock %}

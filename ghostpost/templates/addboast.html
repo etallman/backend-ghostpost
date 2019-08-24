@@ -1,5 +1,10 @@
-<form action="" method = "post">
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>Post a Boast!</h2>
+<form action="/addboast/" method = "post">
     {% csrf_token %}
-    {{ form_as.p }}
-    <button type="submit" class="btn btn-success">Boast!</button>
-  </form>
+    
+    {{form|crispy}}
+    <button class="btn btn-primary" type="submit">BOAST!</button>
+</form>
+{% endblock %}

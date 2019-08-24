@@ -1,13 +1,5 @@
-<div style="color:red; font-family: Arial; text-align: center">
-    <h1>Roast</h1>
-</div>
-
-<div style="padding: 20px; border: 5px inset black">
-{% for roast in roasts %}
-       <h3><a href="{%url 'author'%}">{{foo.author.name}}</a></h3>
-        <div style="padding: 10px 20px 20px 10px">
-            <em>{{foo.message}}</em>
-        </div>
-    {% endfor %}
-</div>
-</div>
+{% for foo in roasts %}
+    <h2>{{foo.roast}}</h2>
+    <h2>{{foo.roast_upvotes}}</h2>
+    <h2>{{foo.roast_downvotes}}</h2>
+{% endfor %}
