@@ -1,5 +1,5 @@
 from django import forms
-from ghostpost.models import AnonUser, Boast, Roast
+from ghostpost.models import Boast, Roast, Vote
 
 
 class BoastForm(forms.Form):
