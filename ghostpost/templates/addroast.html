@@ -1,0 +1,10 @@
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>Post a Roast!</h2>
+<form action="/addroast/" method = "post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <!-- <input type="submit" value="Submit"> -->
+    <button class="btn btn-primary" type="submit">ROAST!</button>
+</form>
+{% endblock %}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>GHOSTPOST</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{{ STATIC_URL }}static/main.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+    {% load static %}
+    {% load crispy_forms_tags %}
+
+    <div class="headerDiv">
+        <h1 class="header">Ghost Post</h1>
+    </div>
+
+    <!-- Roast Form -->
+    {% block roast %}
+    <h2>Post a Roast!</h2>
+    
+    <form action="/addroast/" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button class="btn btn-primary" type="submit">ROAST!</button>
+    </form>
+    {% endblock %}
+
+    <!-- Boast Form -->
+    {% block boast %}
+    <h2>Post a Boast!</h2>
+    <form action="addboast/" method = "post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button class="btn btn-primary" type="submit">BOAST!</button>
+    </form>
+    {% endblock %}
+
+    {% for foo in boasts %}
+    <h2>{{foo.boast}}</h2>
+    <h2>{{foo.boast_upvotes}}</h2>
+    <h2>{{foo.boast_downvotes}}</h2>
+{% endfor %}
+
+    {% for foo in boasts%}
+    <h2><a href="boast/{{foo.boast}}">{{foo.boast}}</a></h2>
+    {{foo.boast}} -- {{foo.boast.count}}
+    {% endfor %}
+    <h4>TOTAL BOASTS:</h4> {{boast.count}}
+    <div>
+        {% for foo in boast %}
+            {{foo.boast}}
+        {% endfor %}
+    </div>
+    <div>
+        {% for foo in roast%}
+        <h2><a href="roast/{{foo.roast}}">{{foo.roast}}</a></h2>
+
+        {% endfor %}
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

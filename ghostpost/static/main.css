@@ -1,0 +1,21 @@
+body {
+    font-family: "Arial"
+}
+
+.headerDiv {
+    border: 42px;
+    padding: 20px;
+    width: 30%;
+}
+
+.header {
+    color: green;
+
+}
+
+.feed {
+    display: flex;
+    justify-self: center;
+    width: 10%;
+    padding: 10px 20px 20px 10px;
+}
